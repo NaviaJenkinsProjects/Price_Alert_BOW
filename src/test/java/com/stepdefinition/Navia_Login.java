@@ -1546,24 +1546,28 @@ public class Navia_Login extends BaseClass {
 		
 
 		driver.findElement(By.xpath("//button[text()='Withdraw']")).click();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		
 
 		try {
 			
+			WebElement iframe = driver.findElement(By.xpath("//iframe[@class='iframe_window']"));
+			driver.switchTo().frame(iframe);
+			Thread.sleep(1000);
+			
 			driver.findElement(By.xpath("//input[@id='wid_amt']")).click();
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//input[@id='wid_amt']")).clear();
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//input[@id='wid_amt']")).sendKeys("1");
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		WebElement element = driver.findElement(By.xpath("//div[@class='bank_radio']"));
+		Thread.sleep(4000);
+		WebElement element = driver.findElement(By.xpath("(//div[@class='payment_cont'])[1]"));
 		Thread.sleep(2000);
 		
         if (element.isDisplayed()) {

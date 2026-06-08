@@ -677,19 +677,42 @@ public class Login extends BaseClass {
 
 	@When("User Click Add Money")
 	public void user_click_add_money() throws InterruptedException {
+		
 		Thread.sleep(4000);
 
-		WebElement element = driver.findElement(
-				By.xpath("//div[@data-cell-id='d']//descendant::div[@aria-label='tab-content-btn_addmoney']"));
-		element.click();
+		try {
+			
+			WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Add money')]//parent::button"));
+			 JavascriptExecutor js = (JavascriptExecutor) driver;
+		       js.executeScript("arguments[0].click();", element);
+
+			
+		} catch (Exception e) {
+			
+			driver.findElement(By.xpath("//button[@data-dhx-id='btn_addmoney']")).click();
+			
+		}
+		
+		Thread.sleep(2000);
 
 	}
 
 	@When("User enter money in amount to add")
 	public void user_enter_money_in_amount_to_add() throws InterruptedException {
 		Thread.sleep(2000);
-
-		WebElement addMoneyFrame = driver.findElement(By.xpath("//iframe[@class='iframe_window']"));
+		
+		try {
+			
+			WebElement element = driver.findElement(By.xpath("//button[@data-dhx-id='btn_addmoney']"));
+			Actions d=new Actions(driver);
+			d.moveToElement(element).perform();
+			d.click(element).perform();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		Thread.sleep(2000);
+		WebElement addMoneyFrame = driver.findElement(By.xpath("(//iframe[@class='iframe_window'])[1]"));
 		driver.switchTo().frame(addMoneyFrame);
 
 		driver.findElement(By.xpath("//input[@placeholder='Enter Amount']")).click();
@@ -751,16 +774,24 @@ public class Login extends BaseClass {
 
 		WebElement UPI = driver.findElement(By.xpath("//input[@placeholder='example@okhdfcbank']"));
 
-		UPI.sendKeys("gayusenthu11-1@okicici");
+		UPI.sendKeys("6374837965");
 		Thread.sleep(1000);
 
 		WebElement clickPayUsingUPI = driver.findElement(By.xpath("//button[text()='Verify and Pay']"));
 		clickPayUsingUPI.click();
 
 		Thread.sleep(3000);
-
-		Thread.sleep(40000);
-		WebElement rejectedMessage = driver.findElement(By.xpath("//div[text()='Payment could not be completed']"));
+		
+		WebElement clickPayUsingUPI1 = driver.findElement(By.xpath("//button[text()='Cancel Payment']"));
+		clickPayUsingUPI1.click();
+		
+		WebElement clickPayUsingUPI11 = driver.findElement(By.xpath("//button[@data-testid='confirm-positive']"));
+		clickPayUsingUPI11.click();
+		
+		
+		WebDriverWait wait1 = new WebDriverWait(driver, java.time.Duration.ofMinutes(1));
+		WebElement rejectedMessage = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Payment could not be completed']")));
+	//	WebElement rejectedMessage = driver.findElement(By.xpath("//div[text()='Payment could not be completed']"));
 
 		if (rejectedMessage.isDisplayed()) {
 			js.executeScript("arguments[0].style.border='2px solid yellow'", rejectedMessage);
@@ -770,7 +801,7 @@ public class Login extends BaseClass {
 
 		else {
 			js.executeScript("arguments[0].style.border='2px solid red'", rejectedMessage);
-			System.err.println("Payment SuccessFull");
+			System.err.println("Payment SuccessFul");
 		}
 
 		driver.switchTo().parentFrame();
@@ -3684,11 +3715,11 @@ public class Login extends BaseClass {
 
 		Thread.sleep(2000);
 
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
-		File des = new File(
-				"E:\\Current Project\\Navia_Testing_Live\\Image\\Backoffice.png");
-		Files.copy(screenshotAs, des);
+//		TakesScreenshot ts = (TakesScreenshot) driver;
+//		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
+//		File des = new File(
+//				"E:\\Current Project\\Navia_Testing_Live\\Image\\Backoffice.png");
+//		Files.copy(screenshotAs, des);
 		Thread.sleep(2000);
 		WebElement element = driver.findElement(By.xpath("//table[@id='ReportTable']"));
 		JavascriptExecutor js65 = (JavascriptExecutor) driver;

@@ -365,6 +365,7 @@ public class PriceAlert extends BaseClass {
 			Thread.sleep(1000);
 			Actions a = new Actions(driver);
 			a.moveToElement(add).perform();
+			a.doubleClick(add).perform();
 			
 			Thread.sleep(1000);
 		
