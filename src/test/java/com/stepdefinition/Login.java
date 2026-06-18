@@ -1898,17 +1898,15 @@ public class Login extends BaseClass {
 		driver.switchTo().frame(element);
 
 		Thread.sleep(2000);
+
+		WebElement element3 = driver.findElement(By.xpath("(//a[text()='Apply'])[1]"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-	       js.executeScript("window.scrollBy(0,500);");
-	       Thread.sleep(1000);
-	       js.executeScript("window.scrollBy(0,500);");
-	       Thread.sleep(1000);
-	       js.executeScript("window.scrollBy(0,500);");
+	       js.executeScript("arguments[0].scrollIntoView();", element3);
 	       Thread.sleep(1000);
 	       
-
-		driver.findElement(By.xpath("(//a[text()='Apply'])["+string+"]")).click();
-
+	       js.executeScript("arguments[0].click();", element3);
+	       Thread.sleep(1000);
+	       
 	}
 
 	@When("User enter UPI ID , Category , Quantity \\(Lots) , BID Options and Price Cut")

@@ -1,33 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="233.487" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Guest Login Page" name="User Login to Guest Id" time="73.184">
+<testsuite name="Cucumber" time="410.095" tests="10" skipped="0" failures="2" errors="0">
+<testcase classname="Dashboard Tools Functionality" name="Login Navia" time="57.357">
 <system-out><![CDATA[
-Given User Launch The Url...................................................passed
-When User Click The Login As Guest button...................................passed
-And User Click The Name.....................................................passed
-And User Click The Email....................................................passed
-And User Click The MobileNumber.............................................passed
-And User Click The Agree Icon...............................................passed
-And User Click The Login button in Guest login button.......................passed
-Then Next Page Shown........................................................passed
-When User Send The Mobile Otp and Verification..............................passed
-And User Click The Login button.............................................passed
+Given User Navigate to Navia................................................passed
+When User Click login with client code......................................passed
+And User Enter Client Code..................................................passed
+And User  Enter Password....................................................passed
+And User Click Agree CheckBox...............................................passed
+And User Click Login button.................................................passed
+And User Click Otp Verification and enter manualy...........................passed
+And User Click Login Again..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Guest Login Page" name="User Check  - Charts- functionality" time="159.386">
+<testcase classname="Dashboard Tools Functionality" name="Verify Margin Calculator" time="21.952">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//iframe[@class='iframe_window']&quot;}
+  (Session info: chrome=149.0.7827.103)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ddca2b9741378e628bc204cfcbf888f3, findElement {using=xpath, value=//iframe[@class='iframe_window']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\CommonPC\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53798}, goog:processID: 26560, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53798/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ddca2b9741378e628bc204cfcbf888f3">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//iframe[@class='iframe_window']"}
+  (Session info: chrome=149.0.7827.103)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ddca2b9741378e628bc204cfcbf888f3, findElement {using=xpath, value=//iframe[@class='iframe_window']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\CommonPC\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53798}, goog:processID: 26560, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53798/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ddca2b9741378e628bc204cfcbf888f3
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at com.stepdefinition.Login.user_click_tools(Login.java:1542)
+	at ✽.User Click Tools "Margin Calculator"(file:///D:/bk/PostMarket_Bow/src/test/java/com/feature/Tools.feature:19)
+]]>
+</failure>
 <system-out><![CDATA[
-And User Click the Watch List...............................................passed
-And User mouse over the scrip "Nifty 50"....................................passed
-And User Click the Charts...................................................passed
-And User Click the Candles Icon.............................................passed
-And User Choose Candle "candle".............................................passed
-And User Click the Mintues..................................................passed
-And User Choose One Minute..................................................passed
-And Verify One Minute Feed Connection Value and Wait One Minute Very Feed Connection Changes.passed
-And User Click the Five Minute..............................................passed
-And Verify Five Minute Feed Connection Valuebb..............................passed
-And User Click One Day......................................................passed
-And Verify One Day Feed Connection Value and Wait One Minute Very Feed Connection Changes.passed
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "Margin Calculator"....................................failed
+And User Select Exchange "MCXFO"............................................skipped
+And User enter net quantity "50"............................................skipped
+And User Select Buy or Sell "SELL"..........................................skipped
+And User Click Add..........................................................skipped
+And Again User Select Exchange "BSEFO"......................................skipped
+And Again User enter net quantity "50"......................................skipped
+And Again User Select Buy or Sell "BUY".....................................skipped
+And Again User Click Add....................................................skipped
+And Verify Initial Margin , Exposure margin and Net Premium is equal to total Amount Required.skipped
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify Trusted Partners" time="52.632">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@id='backtesting']&quot;}
+  (Session info: chrome=149.0.7827.103)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ddca2b9741378e628bc204cfcbf888f3, findElement {using=xpath, value=//button[@id='backtesting']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\CommonPC\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53798}, goog:processID: 26560, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53798/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ddca2b9741378e628bc204cfcbf888f3">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@id='backtesting']"}
+  (Session info: chrome=149.0.7827.103)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ddca2b9741378e628bc204cfcbf888f3, findElement {using=xpath, value=//button[@id='backtesting']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.115 (daf70f9ddee..., userDataDir: C:\Users\CommonPC\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53798}, goog:processID: 26560, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53798/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ddca2b9741378e628bc204cfcbf888f3
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at com.stepdefinition.Login.user_click_back_testing_and_verify(Login.java:5742)
+	at ✽.User Click BackTesting and Verify(file:///D:/bk/PostMarket_Bow/src/test/java/com/feature/Tools.feature:39)
+]]>
+</failure>
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "Trusted Partners".....................................passed
+And User Scroll Down and Up.................................................passed
+And User Verify Shown All API Partners......................................passed
+And User Click Algo-Bridge Verify...........................................passed
+And User Click BackTesting and Verify.......................................failed
+And User Click Community and Verify.........................................skipped
+And User Click Low Code and No Code and Verify..............................skipped
+And User Click Paper Trading and Verify.....................................skipped
+And User Click Trading and Verify...........................................skipped
+And User Click Other and Verify.............................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify API" time="71.188">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "API"..................................................passed
+And User Scroll Down to FAQs................................................passed
+And User click Plus One by One..............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify Blogs" time="37.995">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "Blogs"................................................passed
+And User Verify Blog Page Loading...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify Ban List" time="30.28">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "Ban List".............................................passed
+And User getting Securities in Ban Data.....................................passed
+And User Click Possible Entrance............................................passed
+And User Click Possible Exits...............................................passed
+And User Search Symbols "BPCL"..............................................passed
+And User Click Clear in Search Symbols......................................passed
+And User Click All and getting data of stock , Previous and Current.........passed
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify Global" time="26.674">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "Global"...............................................passed
+And User Verify Global Page.................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify Buy Back" time="32.747">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "Buy Back".............................................passed
+And User Verify Buy Back Page...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify Demo Videos" time="48.283">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+When User MouseOver Dashboard and Click Tools...............................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "Demo Videos"..........................................passed
+And User Scroll Down and Up Verify Navia App Demo Videos Logo...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Dashboard Tools Functionality" name="Verify World Market" time="29.064">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Tools................................passed
+And user Mouse Over The Element.............................................passed
+And User Click Tools "World Market".........................................passed
+And User Select world indices , commodities ,  forex or crypto "Forex"......passed
+And User Choose 1day , 1month , 3month , 1year , 5year or All "5Y"..........passed
 ]]></system-out>
 </testcase>
 </testsuite>
